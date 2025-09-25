@@ -44,6 +44,17 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    // Java/Kotlin のターゲットを揃える (エラー: Inconsistent JVM-target compatibility 対策)
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    // 推奨: Toolchain を明示 (JDK 17 利用)
+    kotlin {
+        jvmToolchain(17)
+    }
 }
 
 dependencies {
