@@ -27,8 +27,7 @@ android {
 
     buildFeatures {
         compose = true
-        viewBinding = true
-        buildConfig = true
+        buildConfig = true // viewBinding 不要 (Composeのみ)
     }
 
     composeOptions {
@@ -72,7 +71,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation("com.google.android.material:material:1.12.0") // Legacy XML 用
+    // material3 を利用しているため旧 material ライブラリは現状不要
+    // implementation("com.google.android.material:material:1.12.0")
 }
 
 // 念のため: JavaCompile タスクにも明示的に release 17 を指示 (一部環境で compileOptions が効いていない場合の保険)

@@ -8,10 +8,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyApp">
         <activity
-            android:name=".LegacyActivity"
-            android:exported="false"
-            android:label="Legacy" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
