@@ -74,3 +74,9 @@ dependencies {
 
     implementation("com.google.android.material:material:1.12.0") // Legacy XML 用
 }
+
+// 念のため: JavaCompile タスクにも明示的に release 17 を指示 (一部環境で compileOptions が効いていない場合の保険)
+tasks.withType<JavaCompile>().configureEach {
+    options.release.set(17)
+}
+
