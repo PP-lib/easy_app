@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- バーコードスキャナ用権限 -->
+    <uses-permission android:name="com.symbol.datawedge.api.ACTION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyApp">
+        
         <activity
             android:name=".LegacyActivity"
             android:exported="false"
-            android:label="Legacy" />
+            android:label="Legacy XML"
+            android:windowSoftInputMode="adjustPan">
+            <!-- バーコードスキャナIntent受信設定 -->
+            <intent-filter>
+                <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
+                <action android:name="com.honeywell.decode.intent.action.DECODE_DATA" />
+                <action android:name="android.intent.ACTION_DECODE_DATA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- バーコードスキャナIntent受信設定 -->
+            <intent-filter>
+                <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
+                <action android:name="com.honeywell.decode.intent.action.DECODE_DATA" />
+                <action android:name="android.intent.ACTION_DECODE_DATA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        
     </application>
 </manifest>

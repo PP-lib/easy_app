@@ -2,8 +2,8 @@
 // モノレポ化やバージョンカタログ導入をする場合はここを拡張
 
 plugins {
-    id("com.android.application") version "8.0.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.24" apply false
+    id("com.android.application") version "7.4.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.20" apply false
 }
 
 tasks.register("clean", Delete::class) {
